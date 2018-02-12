@@ -2,7 +2,7 @@
   "runtime": {
     "majorVersion": "2.7.1"
   },
-  "command": "python twitter_spark.py",
+  "command": "install.sh",
   "release": {},
   "notes": "tweetProducer"
 }
