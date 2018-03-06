@@ -1,19 +1,25 @@
-# stream twitter data to spark!
+# Streaming-Analytics-Demo
+
+Materials to integrate data from multiple sources (Excel, Kafka, Hive, DB) and visualize it in real time using Oracle Cloud. 
 
 ## About 
 
-right now there's three brokers and one consumer
+First, let's de-mystify a few acronyms; 
 
-### Brokers
-* port broker - sends the incoming tweets to localhost:5555
-* tweet writer - writes the incoming data to a file 
-* kafka broker - send the data to kafka 
+* ACCS - [Application Container Cloud Service](https://cloud.oracle.com/acc)
+* OEH - [Oracle Event Hub](https://cloud.oracle.com/event-hub)
+* BDC - [Big Data Cloud](https://cloud.oracle.com/en_US/big-data-cloud)
+* OAC - [Oracle Analytics Cloud](https://cloud.oracle.com/en_US/oac)  
 
-### Consumers
-* the spark consumer just takes the data, prints how many 
-records it got, and the first line of the record (which would be the first tweet)
+![Notional Architecture](static/notional_architecture.png)
 
-## Thanks && Acknowledgements 
+
+## Getting Started
+
+
+
+## Thanks & Acknowledgements 
 
 * https://gist.github.com/bonzanini/af0463b927433c73784d
 * http://www.awesomestats.in/spark-twitter-stream/ 
+* https://google.github.io/styleguide/pyguide.html 

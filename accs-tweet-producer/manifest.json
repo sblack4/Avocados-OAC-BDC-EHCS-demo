@@ -1,0 +1,8 @@
+{
+  "runtime": {
+    "majorVersion": "2.7.1"
+  },
+  "command": "sh install.sh",
+  "release": {},
+  "notes": "tweetProducer"
+}

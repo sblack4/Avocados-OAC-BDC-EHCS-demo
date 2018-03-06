@@ -1,8 +1,15 @@
+# my editor
+.vscode
+
 # python
 *.pyc
 
-# configs
+# configs - these have private info!
 config.py
 
-# logs can get big
+# logs can get REALLY big
 *.log
+
+# java
+*.jar
+!spark-streaming-kafka-0-8-assembly_2.11-2.1.1.jar
