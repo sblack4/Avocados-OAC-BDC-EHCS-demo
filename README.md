@@ -1,4 +1,4 @@
-<img src="static/logo-new-v2.svg?s=200" align="left" style="height: 6em;"/>
+![](https://github.com/sblack4/streaming-data-analytics-demo/blob/master/static/logo-new-v2.svg?s=200)
 
 
 # Streaming-Analytics-Demo
