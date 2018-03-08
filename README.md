@@ -1,5 +1,4 @@
-![](./static/logo-new-v2.svg?s=200)
-
+<img src=static/logo-new-v2.svg height=75 />
 
 # Streaming-Analytics-Demo
 
