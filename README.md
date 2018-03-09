@@ -1,5 +1,4 @@
-<img src="static/logo-new-v2.svg?s=200" align="left" style="height: 6em;"/>
-
+<img src=static/logo-new-v2.svg height=75 />
 
 # Streaming-Analytics-Demo
 
