@@ -151,7 +151,7 @@ class Date_Generator:
         # print("i: {}, num_days: {}".format(self.indx, num_days))
         current_date = self.start_date + timedelta(days=num_days)
         if current_date != self.current_date:
-            self.start_date = self.current_date
+            self.start_date = current_date
             self.current_date = current_date
             self.indx = 0
         self.indx += 1
@@ -168,6 +168,7 @@ def get_rows(NUMBER):
         2: 400, 
         3: 400, 
         4: 500, 
+        5: 650, 
         6: 800, 
         7: 800, 
         8: 900,
@@ -194,10 +195,11 @@ def get_rows(NUMBER):
     ]
 
     def daily_tweets_by_month(tweet_day):
-        mo = tweet_day.month
+        mo = int(tweet_day.month)
         return TWEETS_PER_DAY[mo]
 
-    date_gen_for_tweets = Date_Generator(START_DATE, daily_tweets_by_month).get_date_generator()
+    dategen1 = Date_Generator(START_DATE, daily_tweets_by_month)
+    date_gen_for_tweets = dategen1.get_date_generator()
 
     id_gen = lambda: randrange(968323611915358210, 998323611915358210)
     text_gen = TextGenerator(fake, date_gen_for_tweets).get_text_generator()
