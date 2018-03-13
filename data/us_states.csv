@@ -1,52 +1,52 @@
-"State","Abbreviation"
-"Alabama","AL"
-"Alaska","AK"
-"Arizona","AZ"
-"Arkansas","AR"
-"California","CA"
-"Colorado","CO"
-"Connecticut","CT"
-"Delaware","DE"
-"District of Columbia","DC"
-"Florida","FL"
-"Georgia","GA"
-"Hawaii","HI"
-"Idaho","ID"
-"Illinois","IL"
-"Indiana","IN"
-"Iowa","IA"
-"Kansas","KS"
-"Kentucky","KY"
-"Louisiana","LA"
-"Maine","ME"
-"Montana","MT"
-"Nebraska","NE"
-"Nevada","NV"
-"New Hampshire","NH"
-"New Jersey","NJ"
-"New Mexico","NM"
-"New York","NY"
-"North Carolina","NC"
-"North Dakota","ND"
-"Ohio","OH"
-"Oklahoma","OK"
-"Oregon","OR"
-"Maryland","MD"
-"Massachusetts","MA"
-"Michigan","MI"
-"Minnesota","MN"
-"Mississippi","MS"
-"Missouri","MO"
-"Pennsylvania","PA"
-"Rhode Island","RI"
-"South Carolina","SC"
-"South Dakota","SD"
-"Tennessee","TN"
-"Texas","TX"
-"Utah","UT"
-"Vermont","VT"
-"Virginia","VA"
-"Washington","WA"
-"West Virginia","WV"
-"Wisconsin","WI"
-"Wyoming","WY"
+State,Abbreviation,Temp_C,Temp_F
+Alabama,AL,17.06613786,62.71904816
+Alaska,AK,-4.890737575,23.19667236
+Arizona,AZ,15.38152612,59.68674701
+Arkansas,AR,15.57396253,60.03313255
+California,CA,14.32767729,57.78981912
+Colorado,CO,6.931333907,44.47640103
+Connecticut,CT,9.020079513,48.23614312
+Delaware,DE,11.89523758,53.41142764
+District of Columbia,DC,11.91847451,53.45325412
+Florida,FL,21.50156159,70.70281086
+Georgia,GA,17.52708208,63.54874774
+Hawaii,HI,22.43928271,72.39070887
+Idaho,ID,5.334255048,41.60165909
+Illinois,IL,10.86611175,51.55900115
+Indiana,IN,10.87495576,51.57492036
+Iowa,IA,8.647807705,47.56605387
+Kansas,KS,12.16564786,53.89816616
+Kentucky,KY,12.95079449,55.31143007
+Louisiana,LA,19.12886239,66.43195229
+Maine,ME,4.349941969,39.82989554
+Montana,MT,12.13785925,53.84814665
+Nebraska,NE,7.625226355,45.72540744
+Nevada,NV,6.555493155,43.79988768
+New Hampshire,NH,4.47281248,40.05106246
+New Jersey,NJ,17.53740701,63.56733262
+New Mexico,NM,12.30107278,54.141931
+New York,NY,4.986482029,40.97566765
+North Carolina,NC,9.016576677,48.22983802
+North Dakota,ND,9.814444804,49.66600065
+Ohio,OH,5.612321898,42.10217942
+Oklahoma,OK,10.62589548,51.12661186
+Oregon,OR,11.85708683,53.34275629
+Maryland,MD,7.183618467,44.93051324
+Massachusetts,MA,14.78025168,58.60445303
+Michigan,MI,4.169714856,39.50548674
+Minnesota,MN,10.32015165,50.57627297
+Mississippi,MS,15.38154731,59.68678517
+Missouri,MO,8.16582539,46.6984857
+Pennsylvania,PA,9.11005226,48.39809407
+Rhode Island,RI,8.97309907,48.15157833
+South Carolina,SC,17.03475697,62.66256255
+South Dakota,SD,6.94736262,44.50525272
+Tennessee,TN,14.05629016,57.30132228
+Texas,TX,18.10723398,64.59302116
+Utah,UT,8.478840672,47.26191321
+Vermont,VT,5.398153895,41.71667701
+Virginia,VA,12.80478166,55.04860699
+Washington,WA,7.643112282,45.75760211
+West Virginia,WV,10.95027829,51.71050093
+Wisconsin,WI,5.946672397,42.70401032
+Wyoming,WY,5.099001659,41.17820299
