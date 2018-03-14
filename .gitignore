@@ -13,3 +13,19 @@ config.py
 # java
 *.jar
 !spark-streaming-kafka-0-8-assembly_2.11-2.1.1.jar
+!bdc-spark-scala_2.11-1.0.jar
+
+# Scala
+target 
+*.class
+
+# SBT 
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/

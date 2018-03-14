@@ -27,28 +27,26 @@ def HandleJson(df):
     Args:
         df (dataframe): dataframe containing tweets
     """
-
     # check for possibly_sensitive & get rid of sensitive material
     if df.select("possibly_sensitive").show() == "true":
         return
-    tweets = df.select("id",
-        "created_at",
-        expr('COALESCE(text, "null") AS text'),
+    tweets = df.select(
+        "id",
+        expr('COALESCE(text, "") AS text'),
         expr('COALESCE(favorite_count, 0) AS favorite_count'),
         expr('COALESCE(retweet_count, 0) AS retweet_count'),
         expr('COALESCE(quote_count, 0) AS quote_count'),
         expr('COALESCE(reply_count, 0) as reply_count'),
         expr('COALESCE(lang, "und") as lang'),
-        expr('COALESCE(coordinates, 0) as coordinates'),
-        expr('COALESCE(place, "null") as place'),
         col("user.id").alias("user_id"),
-        expr("good_day() as date"),
+        expr("unix_timestamp(created_at, \"EEE MMM d HH:mm:ss Z yyyy\") as datetime"),
         expr("rand_state() as state"),
         expr("rand_provider() as provider")
     )
-    tweets.write.mode("append").insertInto("default.tweets")
+    tweets.write.mode("append").insertInto("default.realtime_tweets")
 
-    users = df.select("user.id",
+    users = df.select(
+        "user.id",
         "user.name",
         "user.description",
         "user.followers_count",
@@ -64,7 +62,6 @@ def handleRDD(rdd):
     Args:
         rdd (RDD): RDD of twitter data, each row will be a Tweet as JSON
     """
-
     if not rdd:
         return
     try:
@@ -78,6 +75,15 @@ if __name__ == "__main__":
     ssc = StreamingContext(sc, 1)
     sqlContext = HiveContext(sc)
     # ssc.checkpoint("file:///" + getcwd())
+    states = sqlContext.sql("select State from us_states").collect()
+    def rand_state():
+        return choice(states)[0].encode('utf-8')
+    sqlContext.udf.register("rand_state", rand_state)
+
+    def rand_provider():
+        return choice(["A", "B", "C"])
+    sqlContext.udf.register("rand_provider", rand_provider)
+
 
     broker, topic = config.broker, config.topic
     lines = KafkaUtils.createDirectStream(ssc, [topic], {"metadata.broker.list": broker})
