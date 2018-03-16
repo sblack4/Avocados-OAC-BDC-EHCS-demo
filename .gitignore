@@ -1,5 +1,7 @@
-# my editor
+# my editor(s)
 .vscode
+*.swp
+~*
 
 # python
 *.pyc

@@ -23,25 +23,39 @@ object App {
             case e:Exception=> return LocalDate.now()
         }
     }
-        
-    def randState(): String = {
-        val states = List("Utah", "Hawaii", "Minnesota", "Ohio", "Arkansas", "Oregon", "Texas", 
-            "North Dakota", "Pennsylvania", "Connecticut", "Nebraska", "Vermont", "Nevada", 
-            "Washington", "Illinois", "Oklahoma", "District of Columbia", "Delaware", 
-            "Alaska", "New Mexico", "West Virginia", "Missouri", "Rhode Island", "Georgia", 
-            "Montana", "Michigan", "Virginia", "North Carolina", "Wyoming", "Kansas", 
-            "New Jersey", "Maryland", "Alabama", "Arizona", "Iowa", "Massachusetts", 
-            "Kentucky", "Louisiana", "Mississippi", "New Hampshire", "Tennessee", 
-            "Florida", "Indiana", "Idaho", "South Carolina", "South Dakota", "California", 
-            "New York", "Wisconsin", "Colorado", "Maine"
-        )
-        return states(Random.nextInt(states.size))
-    }
-    
-    def randProvider():String = {
-        return List("A", "B", "C")(Random.nextInt(3))
-    }
-    
+    val states = Array("Utah", "Hawaii", "Minnesota", "Ohio", "Arkansas", "Oregon", "Texas", 
+        "North Dakota", "Pennsylvania", "Connecticut", "Nebraska", "Vermont", "Nevada", 
+        "Washington", "Illinois", "Oklahoma", "District of Columbia", "Delaware", 
+        "Alaska", "New Mexico", "West Virginia", "Missouri", "Rhode Island", "Georgia", 
+        "Montana", "Michigan", "Virginia", "North Carolina", "Wyoming", "Kansas", 
+        "New Jersey", "Maryland", "Alabama", "Arizona", "Iowa", "Massachusetts", 
+        "Kentucky", "Louisiana", "Mississippi", "New Hampshire", "Tennessee", 
+        "Florida", "Indiana", "Idaho", "South Carolina", "South Dakota", "California", 
+        "New York", "Wisconsin", "Colorado", "Maine"
+    )
+    val randState = () => states.lift(Random.nextInt(states.size)).toString
+    val randStateUdf = udf(randState)
+
+    val randProvider = () => List("A", "B", "C")(Random.nextInt(3))
+    val randProviderUdf = udf(randProvider)
+    // def randState(): String = {
+    //     val states = List("Utah", "Hawaii", "Minnesota", "Ohio", "Arkansas", "Oregon", "Texas", 
+    //         "North Dakota", "Pennsylvania", "Connecticut", "Nebraska", "Vermont", "Nevada", 
+    //         "Washington", "Illinois", "Oklahoma", "District of Columbia", "Delaware", 
+    //         "Alaska", "New Mexico", "West Virginia", "Missouri", "Rhode Island", "Georgia", 
+    //         "Montana", "Michigan", "Virginia", "North Carolina", "Wyoming", "Kansas", 
+    //         "New Jersey", "Maryland", "Alabama", "Arizona", "Iowa", "Massachusetts", 
+    //         "Kentucky", "Louisiana", "Mississippi", "New Hampshire", "Tennessee", 
+    //         "Florida", "Indiana", "Idaho", "South Carolina", "South Dakota", "California", 
+    //         "New York", "Wisconsin", "Colorado", "Maine"
+    //     )
+    //     return states(Random.nextInt(states.size))
+    // }
+
+    // def randProvider():String = {
+    //     return List("A", "B", "C")(Random.nextInt(3))
+    // }
+
     def handleJson(df: Dataset[Tweet]) = {
         val filtered_df = df
             .filter("possibly_sensitive = false")
@@ -59,7 +73,7 @@ object App {
                 randProvider().alias("provider")
             )
         )
-        
+
         val filtered_df = df.select(
             col("id"),
             expr("COALESCE(text, \"null\") AS text"),
@@ -76,7 +90,7 @@ object App {
             expr("provider")
         )
         tweets.write.mode("append").insertInto("default.tweets")
-        
+
         val users = df.select(
             "user.id",
             "user.name",
