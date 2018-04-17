@@ -26,7 +26,7 @@ updatedb
 
 #
 ### Configure Spark ###
-# TODO: (sblack) 
+# TODO: (sblack) this will depend on size of instance, no?
 # see https://cwiki.apache.org/confluence/display/AMBARI/Modify+configurations 
 # 
 

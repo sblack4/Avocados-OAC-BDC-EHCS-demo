@@ -1,5 +1,4 @@
 # my editor(s)
-.vscode
 *.swp
 ~*
 
@@ -7,7 +6,7 @@
 *.pyc
 
 # configs - these have private info!
-config.py
+# config.py
 
 # logs can get REALLY big
 *.log
