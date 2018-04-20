@@ -1,2 +1,2 @@
 pip install -r requirements.txt -t modules
-python kafka_broker.py
+nohup python kafka_broker.py > myprogram.out 2>&1
