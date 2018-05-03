@@ -1,5 +1,4 @@
 # my editor(s)
-.vscode
 *.swp
 ~*
 
@@ -7,13 +6,14 @@
 *.pyc
 
 # configs - these have private info!
-config.py
+# config.py
 
 # logs can get REALLY big
 *.log
 
 # java
 *.jar
+# you'll need these jars
 !spark-streaming-kafka-0-8-assembly_2.11-2.1.1.jar
 !bdc-spark-scala_2.11-1.0.jar
 
@@ -31,3 +31,6 @@ project/plugins/project/
 .history
 .cache
 .lib/
+
+# workshop is coming...
+workshops  
