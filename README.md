@@ -20,16 +20,11 @@ Now this picture should explain the rest:
 
 ## Getting Started
 
-To get started you should have an Oracle Cloud account with atleast 6 OCPUs.  
-You should follow along in the [Technical Guide](static/Visualizing_Streaming_Data.docx)
+For information on setting up the demo see [SETUP.md](SETUP.md)
 
-Basically do this: 
-1. Stand up Kafka, create a topic
-2. Rename `template-config.py` to `config.py`, fill in config values, and deploy accs-tweet-producer to accs
-3. Stand up BDC, rename `template-config.py` to `config.py`, fill in config values
-4. Submit consumer spark job
-5. Stand up DB & OAC
-6. Connect OAC & BDC
+## Help
+
+Please [submit an issue](https://github.com/unofficialoraclecloudhub/Avocados-OAC-BDC-EHCS-demo/issues/new) if you need help or just to say hi! 
 
 
 ## Thanks & Acknowledgements 
@@ -37,3 +32,5 @@ Basically do this:
 * https://gist.github.com/bonzanini/af0463b927433c73784d
 * http://www.awesomestats.in/spark-twitter-stream/ 
 * https://google.github.io/styleguide/pyguide.html 
+* https://github.com/oracle/learning-library/tree/master/workshops/journey2-new-data-lake 
+

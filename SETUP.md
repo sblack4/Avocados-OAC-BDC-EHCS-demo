@@ -1,0 +1,3 @@
+# setup in oracle cloud 
+
+
